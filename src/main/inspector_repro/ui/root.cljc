@@ -8,8 +8,6 @@
     [fulcro.client.primitives :as prim :refer [defsc]]
     ))
 
-;; The main UI of your application
-
 (defsc SecondRoute [this _]
   {:initial-state {:page :second}
    :query [:page]})
@@ -17,6 +15,8 @@
 (defsc FirstRoute [this _]
   {:initial-state {:page :first}
    :query         [:page]})
+
+;; Assertion error only happens when there is more than one route
 
 (r/defrouter RootRouter :root-router
   (fn [this {:keys [page]}]
